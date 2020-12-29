@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <div class="colore">
+  <div class="row">
+    <div class="container">
+      <form #f="ngForm" (ngSubmit)="ajouterTache(f.value)">
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label">Matricule</label>
+          <div class="col-sm-8">
+            <input type="text"  class="form-control" name="matricule" ngModel="" [(ngModel)]="heureS.matricule">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label">Date_1</label>
+          <div class="col-sm-8">
+            <input type="date" class="form-control" ngModel="" name="duree1" [(ngModel)]="heureS.duree1">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label  class="col-sm-2 col-form-label">Date_2</label>
+          <div class="col-sm-8">
+            <input type="date" class="form-control" name="duree2" ngModel="" [(ngModel)]="heureS.duree2">
+          </div>
+        </div>
+        <div class="col-sm-8 col-sm-offset-6"  >
+          <button type="submit" class="btn  btn-success">Calculer</button>
+        </div>
+
+
+      </form>
+
+    </div>
+
+
+  </div>
+  </div>
+
+  <div class="row meki">
+
+    <div class="container">
+      <table class="table" *ngIf="Li != undefined">
+        <thead class="table-dark">
+        <tr>
+
+          <th >Matricule</th>
+          <th scope="col">Date</th>
+          <th scope="col">Heure_Debut</th>
+          <th scope="col">Heure_Fin</th>
+          <th scope="col">Heures_Normale</th>
+          <th scope="col">Nbr_Heure_100%</th>
+          <th scope="col">Nbr_Heure_15%%</th>
+          <th scope="col">Nbr_Heure_40%</th>
+          <th scope="col">Nbr_Heure_50%</th>
+          <th scope="col">Panier</th>
+          <th scope="col">Totale_Hs</th>
+          <th scope="col">Totale_Heure</th>
+          <th scope="col">Matricule_Emp</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="colore" *ngFor="let list of Li">
+
+          <td >{{list.id}}</td>
+          <td>{{list.dateday}}</td>
+          <td>{{list.datedebut}}</td>
+          <td>{{list.datefint}}</td>
+          <td>{{list.nbreHtNormale}}</td>
+          <td>{{list.nbreSup100}}</td>
+          <td>{{list.nbreSup15}}</td>
+          <td>{{list.nbreSup40}}</td>
+          <td>{{list.nbreSup50}}</td>
+          <td>{{list.panier}}</td>
+          <td>{{list.tHs}}</td>
+          <td>{{list.total_Heure}}</td>
+          <td>{{list.employer.id}}</td>
+
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+
+

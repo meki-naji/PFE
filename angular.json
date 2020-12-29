@@ -53,9 +53,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "../node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "../node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../node_modules/jquery/dist/jquery.min.js",
+              "../node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -149,5 +154,8 @@
       }
     }
   },
-  "defaultProject": "PFE"
+  "defaultProject": "PFE",
+  "cli": {
+    "analytics": "538b22ca-557f-4055-bcf8-0175747fd6a1"
+  }
 }

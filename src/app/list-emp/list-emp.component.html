@@ -1,0 +1,61 @@
+
+<div class="textbox">
+<table class="table">
+  <thead class="table-dark">
+
+  <tr>
+
+    <th scope="col">Matricule</th>
+    <th scope="col">Nom</th>
+    <th scope="col">Fonction</th>
+    <th scope="col"> </th>
+    <th scope="col"> </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let list of listesEmp" class="textbox1">
+
+    <td>{{list.id}}</td>
+    <td>{{list.nom}}</td>
+    <td>{{list.fonction}}</td>
+
+    <td><button class="btn btn-primary" (click)="EditEmp(list.id)">Edit</button></td>
+    <td><button class="btn btn-danger" (click)="DeleteEmp(list.id)">Delete</button></td>
+
+  </tr>
+  </tbody>
+</table>
+
+
+<ul class="pagination">
+  <!--<li><a href="#" class="prev">< Prev</a> </li> -->
+  <li class="pageNumber" *ngFor="let p of pages; let i=index">
+
+    <a   (click)="setPage(i,$event)"  [ngClass]="{'active':i==page}">{{i}}</a></li>
+  <!--<li><a href="#" class="next " (click)="setPage(page+1,$event)"   [ngClass]="{'active':page==page+1}">Next ></a> </li>
+
+
+-->
+</ul>
+
+
+</div>
+<!--
+<script type="text/javascript">
+  $(document).ready(function (){
+    $('.next').click(function (){
+      $('.pagination').find('.pageNumber.active').next().
+        addClass('active');
+      $('.pagination').find('.pageNumber.active').next().
+      removeClass('active');
+    })
+
+    $('.prev').click(function (){
+      $('.pagination').find('.pageNumber.active').prev().
+      addClass('active');
+      $('.pagination').find('.pageNumber.active').next().
+      removeClass('active');
+    })
+  })
+</script>
+-->
